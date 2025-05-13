@@ -103,11 +103,23 @@
     <button onclick="changeMode('shorten')">Shorten</button>
     <button onclick="changeMode('expand')">Expand</button>
   </nav>
-  <main>
-    <textarea id="inputText" placeholder="Enter text to paraphrase..."></textarea>
-    <button id="runBtn" onclick="paraphrase()">Paraphrase</button>
-    <div id="output">Paraphrased text will appear here...</div>
-  </main>
+ <main>
+  <div style="display: flex; gap: 20px; align-items: flex-start;">
+<!-- Left column: Input and button -->
+    <div style="flex: 1;">
+      <textarea id="inputText" placeholder="Enter text to paraphrase..." style="width: 100%; height: 300px;"></textarea>
+      <br />
+      <button id="runBtn" onclick="paraphrase()" style="margin-top: 10px; background-color: #C92D24; color: white; border: none; padding: 10px 20px;">Paraphrase</button>
+    </div>
+
+<!-- Right column: Result -->
+    <div style="flex: 1;">
+      <div id="output" style="width: 100%; height: 300px; border: 1px solid #ccc; padding: 10px; background-color: white;">
+        Paraphrased text will appear here...
+      </div>
+    </div>
+  </div>
+</main>
   <script>
     let currentMode = 'standard';
     function changeMode(mode) {
